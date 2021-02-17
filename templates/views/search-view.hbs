@@ -1,0 +1,205 @@
+{{>header}}
+    </section>
+    <!-- search-result-wrapper -->
+   <section>
+    <div class="breadcrumb-top-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-12 col-xl-12">
+                   <div class="section-bradcrumb">
+                       <!-- left -->
+                       <div class="breadcrumb-left">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li>Search</li>
+                        </ul>
+                        <h4><span>{{userData.length}}</span> matches found for : doctor/Nurse in {{location}}</h4>
+                       </div>
+                       <!-- b-right -->
+                       <div class="breadcrumb-right">
+                        <span>Sort By</span>
+                        <div class="select-dropdown">
+                            <select>
+                                <option value="Option 1">Rating</option>
+                                <option value="Option 2">Popular</option>
+                                <option value="Option 3">Free Number 3</option>
+                            </select>
+                        </div>
+                      </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="search-result-wrapper bg-light-orange ptb-50">
+        <div class="container">
+            <div class="row">
+                <!-- search-filter-left -->
+                <div class="col-md-3 col-lg-3 col-xl-3">
+                  <div class="search-filter-wrapper">
+                      <h5>Search Filter</h5>
+                      <form action="">
+                          <div class="form-group">
+                              <input type="date" name="filter-date" id="filter-date">
+                          </div>
+                           <!-- gender-box -->
+                           <div class="gender-box">
+                            <div class="form-group">
+                                <h6>Gender</h6>
+                            </div>
+                            <!-- Gender-male -->
+                            <div class="form-group">
+                              <label class="check-box">Male
+                                  <input type="checkbox" checked="checked">
+                                  <span class="checkmark"></span>
+                               </label>
+                            </div>
+                            <!-- Gender-Female -->
+                            <div class="form-group">
+                              <label class="check-box">Female
+                                  <input type="checkbox" checked="checked">
+                                  <span class="checkmark"></span>
+                               </label>
+                            </div>
+                           </div>
+                            <!-- Splecialist-box -->
+                           <div class="specialist-box">
+                            <div class="form-group">
+                                <h6>Select Specialist</h6>
+                            </div>
+                            <!-- Medicine- -->
+                            <div class="form-group">
+                              <label class="check-box">Medicine
+                                  <input type="checkbox" checked="checked">
+                                  <span class="checkmark"></span>
+                               </label>
+                            </div>
+                            <!-- Cardiology- -->
+                            <div class="form-group">
+                              <label class="check-box">Cardiology
+                                  <input type="checkbox" checked="checked">
+                                  <span class="checkmark"></span>
+                               </label>
+                            </div>
+                             <!-- Phycology- -->
+                            <div class="form-group">
+                              <label class="check-box">Phycology
+                                  <input type="checkbox" checked="checked">
+                                  <span class="checkmark"></span>
+                               </label>
+                            </div>
+                             <!-- Neurology- -->
+                            <div class="form-group">
+                              <label class="check-box">Neurology
+                                  <input type="checkbox" checked="checked">
+                                  <span class="checkmark"></span>
+                               </label>
+                            </div>
+                             <!-- Othopedic- -->
+                            <div class="form-group">
+                              <label class="check-box">Orthopedic
+                                  <input type="checkbox" checked="checked">
+                                  <span class="checkmark"></span>
+                               </label>
+                            </div>
+                             <!-- Dentist- -->
+                            <div class="form-group">
+                              <label class="check-box">Dentist
+                                  <input type="checkbox" checked="checked">
+                                  <span class="checkmark"></span>
+                               </label>
+                            </div>
+                            <!-- Urology- -->
+                            <div class="form-group">
+                                <label class="check-box">Urologoy
+                                    <input type="checkbox" checked="checked">
+                                    <span class="checkmark"></span>
+                                 </label>
+                              </div>
+                           </div>
+                           <div class="form-group">
+                               <input type="submit" value="Search" class="submit-button" name="search-filter" id="search-fitler">
+                           </div>
+                      </form>
+                  </div>
+                </div>
+                 <!-- search-filter-right -->
+                <div class="col-md-9 col-lg-9 col-xl-9">
+                    <!-- search-doctor-list-wrapper -->
+                  <div class="search-doctor-list-wrapper">
+
+                      {{dataFoundNotFound userData.length}}
+                      {{#each userData}}
+                      <!-- full-width-single-doctor-view -->
+                     <div class="single-doctor-full-width">
+                         <div class="row">
+                             <!-- single-left -->
+                             <div class="col-md-3 col-lg-3 col-xl-3 col-sm-12 col-12">
+                                <div class="single-doctor-left">
+                                    <div class="sing-doc-img">
+                                        <img src="assets/images/uploads/{{this.photo}}" alt="1.jpg">
+                                    </div>
+                                </div>
+                             </div>
+                               <!-- single-midle -->
+                             <div class="col-md-6 col-lg-6 col-xl-6 col-sm-12 col-12">
+                                <div class="single-doctor-midle">
+                                    <h5><a href="#">Dr. {{this.name}}
+                                    </a></h5>
+                                    <span>{{this.education.[0].degree}}</span>
+                                    <ul class="star-review d-flex">
+                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                    </ul>
+                                    <div class="doc-dept d-flex my-2">
+                                        <img src="assets/images/department/specialities-01 (1).png" alt="1.png">
+                                        <b>{{this.specialties}}</b>
+                                    </div>
+                                    <div class="location-map"><i class="fa fa-map-marker mr-2"></i>{{this.clinicinfo.[0].clinicaddress}}</div>
+                                    <div class="image-light-box">
+                                        <ul class="d-flex">
+                                            <li><a href="#"><img src="assets/images/light-box/feature-01.jpg" alt="1.jpg"></a></li>
+                                            <li><a href="#"><img src="assets/images/light-box/feature-02.jpg" alt="1.jpg"></a></li>
+                                            <li><a href="#"><img src="assets/images/light-box/feature-03.jpg" alt="1.jpg"></a></li>
+                                            <li><a href="#"><img src="assets/images/light-box/feature-04.jpg" alt="1.jpg"></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="feature-tag">
+                                        <ul>
+                                            <li>Dental Fillings</li>
+                                            <li>Whitening</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                             </div>
+                              <!-- single-right -->
+                             <div class="col-md-3 col-lg-3 col-xl-3 col-sm-12 col-12">
+                                <div class="single-doctor-right">
+                                   <ul>
+                                       <li><i class="fa fa-thumbs-o-up mr-2"></i>98%</li>
+                                       <li><i class="fa fa-comment-o mr-2"></i>17 Feedback</li>
+                                       <li><i class="fa fa-map-marker mr-2"></i>{{this.clinicinfo.[0].clinicaddress}}</li>
+                                       <li><i class="fa fa-money mr-2"></i>Tk. 600 - Tk 1000</li>
+                                   </ul>
+                                   <a href="doctor-profile?id={{this._id}}" class="common-button-two"><span class="text">View Profile</span></a>
+                                   <a href="booking-doctor?id={{this._id}}" class="common-button-two active"><span class="text">Book Now</span></a>
+                                </div>
+                             </div>
+                         </div>
+                     </div>
+                     {{/each }}
+                    
+                     <div class="load-more w-100 text-center">
+                        <a href="#" class=" common-button-two">Load More</a>
+                     </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   </section>
+   <!-- footer-section -->
+  {{>footer}}

@@ -1,0 +1,122 @@
+{{>header}}
+    </section>
+     <!-- bredcrump-wrapper -->
+   <section>
+    <div class="breadcrumb-top-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-12 col-xl-12">
+                   <div class="section-bradcrumb">
+                       <!-- left -->
+                       <div class="breadcrumb-left">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li>Invoice</li>
+                        </ul>
+                        <h4>Invoice View</h4>
+                       </div>
+                       
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+   </section>
+    <!-- invoice-wrapper -->
+    <section>
+       <div class="container">
+           <div class="row">
+               <div class="col-md-10 col-lg-10 col-xl-10 offset-md-1 offset-lg-1 offset-xl-1">
+                 <div class="invoice-wrapper  card p-5 my-5" id="invoiceContent">
+                   <ul>
+                       <li class="text-right mb-3"><a href="index.html" class="common-button-two">Print</a><a  onclick="downloadInvoice();" class="common-button-two bg-light-blue text-white text-bold">Save</a></li>
+                       <li class="d-flex justify-content-between mb-3">
+                           <div class="brand-logo">
+                              <h4>E- <span>Call</span></h4>
+                           </div> 
+                           <div class="invoice-text-info text-right">
+                               <span><strong>Order:</strong>#00124</span><br>
+                               <span><strong>Issued:</strong>{{docappData.currentDate}}</span>
+                         </div>
+                      </li>
+                      <li class="d-flex justify-content-between mb-3">
+                        <div class="invoice-text-info">
+                            <h5>Invoice From</h5>
+                            <span>Dr. {{docData.name}} <br>
+                                {{docData.education.[0].degree}}, <br>
+                                {{docData.clinicinfo.[0].clinicaddress}}</span>
+                        </div>
+                        <div class="invoice-text-info text-right">
+                            <h5>Invoice To</h5>
+                            <span>Mr./Mrs. {{docappData.firstname}} <br>
+                                806 Twin Willow Lane, Old Forge, <br>
+                                {{docappData.address}}</span>
+                      </div>
+                      </li>
+                      <li class="d-flex justify-content-between mb-3">
+                        <div class="invoice-text-info">
+                            <h5>Payment Method</h5>
+                            <span>Dr. Darren Elder <br>
+                                806 Twin Willow Lane, Old Forge, <br>
+                                Newyork, USA</span>
+                        </div>
+                        
+                      </li>
+
+                       <li>
+                           <!-- table-data -->
+                            <table class="table">
+                                <tr>
+                                    <th>Description</th>
+                                    <th>Quantity</th>
+                                    <th>Vat</th>
+                                    <th>Total</th>
+                                </tr>
+                                <tr>
+                                    <td>General Consultation</td>
+                                    <td>1</td>
+                                    <td>0 Tk</td>
+                                    <td>600</td>
+                                </tr>
+                                <tr>
+                                <td>Video Call Booking</td>
+                                <td>1</td>
+                                <td>0 Tk</td>
+                                <td>600</td>
+                               </tr>
+                               <!-- subtotal -->
+                               <tr>
+                                   <td></td>
+                                   <td></td>
+                                   <th>Subtotal</th>
+                                   <td>Tk. 120</td>
+                               </tr>
+                               <!-- discount -->
+                               <tr>
+                                <td></td>
+                                <td></td>
+                                <th>Discount</th>
+                                <td>-10%</td>
+                               </tr>
+                               <tr>
+                                <td></td>
+                                <td></td>
+                                <th>Total</th>
+                                <td>Tk 1060</td>
+                               </tr>
+                            </table>
+                       </li>
+                       <li>
+                           <h6>Other Information</h6>
+                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed dictum ligula, cursus blandit risus. Maecenas eget metus non tellus dignissim aliquam ut a ex. Maecenas sed vehicula dui, ac suscipit lacus. Sed finibus leo vitae lorem interdum, eu scelerisque tellus fermentum. Curabitur sit amet lacinia lorem. Nullam finibus pellentesque libero.</p>
+                       </li>
+                   </ul>  
+                 </div>  
+               </div>
+           </div>
+       </div>
+    </section>
+
+   <!-- footer-section -->
+  {{>footer}}

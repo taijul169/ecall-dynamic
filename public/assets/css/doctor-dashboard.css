@@ -1,0 +1,205 @@
+:root {
+	--themeColor: #01A479;
+	--themeColor-light-blue: #10E0FF;
+	--themeColor-deep-blue: #1B5A90;
+	--transition: all 0.3s ease-in-out;
+	--boxShadow:  0 0.5rem 1rem rgba(1, 164, 121, .30) !important;
+	--link-text-size: 0.813rem;
+	--link-color: #334141;
+	--bg-light: #f9fafd ;
+	--bg-dark: #353353 ;
+	--button-bg: #FF4C60 ;
+	--text-hover-color:#FFD15C;
+  
+  }
+
+
+
+.dash-left {
+	background: #FFF;
+	padding: 15px 0;
+}
+.pro-img {
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin: 0 auto;
+	border: 5px solid #f4f4f4;
+}
+.dash-left {
+	background: #FFF;
+	padding: 15px 0;
+	border: 1px solid #ececec;
+	border-radius: 5px;
+}
+.doct-dash-profile h6 {
+	font-weight: 600;
+	display: block;
+	margin-top: 12px;
+}
+.doct-dash-profile span{
+	font-size: 13px;
+}
+.dash-left .nav-item {
+	padding-left: 25px;
+	border-top: 1px solid #ececec;
+	padding: 6px;
+}
+.dash-left .dash-left .nav-link {
+	color: #686564;
+	font-weight: 500;
+	transition:0.5s ease-in-out;
+}
+.dash-left .nav-link.active{
+	color: var(--themeColor-light-blue);
+}
+.dash-left .nav-link:hover{
+	color:var(--themeColor-light-blue);
+}
+
+/* circular-progress-css start */
+.single-circle {
+	width: 100px;
+	height: 100px;
+	background: transparent;
+	border: 6px solid #E3DFDFCC;
+	line-height: 88px;
+	text-align: center;
+	border-radius: 50%;
+	margin-right: 20px;
+}
+.right-content-cirle p {
+	font-weight: 500;
+}
+.dash-right-top {
+	background: #FFF;
+	padding: 20px;
+	border: 1px solid #ececec;
+}
+.red{
+	border: 6px solid #a81d6e;
+}
+.green{
+	border: 6px solid #01A479;
+}
+.blue{
+	border: 6px solid #10E0FF;
+}
+.p-img {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin-right: 4px;
+	float: left;
+}
+.p-info h6 {
+	font-size: 12px;
+	font-weight: 500;
+}
+.p-info small {
+	color: #AAA7A7;
+	display: block;
+	margin-top: -5px;
+}
+.p-info {
+	padding-left: 50px;
+}
+td span {
+	display: block;
+	color: #71cae6;
+	font-weight: 500;
+	margin-top: -5px;
+}
+td{
+	font-size: 13px;
+}
+.action li a {
+	margin: 2px;
+	padding: 4px 6px;
+	font-size: 12px;
+	font-weight: 400;
+	border-radius: 3px;
+}
+.light-blue {
+	background: #74b2f445;
+	color: #74b2f4;
+}
+.light-green {
+	background-color: #0271522e;
+	color: #027152;
+}
+.light-red {
+	background-color: #ff494930;
+	color: #ff4949;
+}
+
+/* profile-setting-start */
+.row.doctor-form .form-group label {
+	display: block;
+	color: #282525;
+	font-weight: 500;
+}
+.form-group.problem-des textarea {
+	width: 100%;
+	border: 1px solid #dbdada;
+	border-radius: 4px;
+}
+.about-me {
+	padding: 20px;
+}
+.card.my-3.about-me textarea {
+	width: 100%;
+	border: 1px solid #dbdbdb;
+	border-radius: 4px;
+}
+.pro-settings-photo {
+	width: 110px;
+	height: 110px;
+	margin-right: 20px;
+	margin-bottom: 30px;
+	border-radius: 5px;
+	overflow: hidden;
+}
+.photo-upload {
+	position: relative;
+}
+.photo-upload input {
+	opacity: 0;
+	height: 100%;
+	z-index: 2;
+	display: block;
+	top: 0;
+	width: 100%;
+}
+.photo-upload span {
+	position: absolute;
+	width: 130px;
+	left: 0;
+	padding: 20px;
+	border: 2px dashed;
+	top: 0;
+}
+.photo-upload label {
+	margin-top: 50px;
+	font-size: 12px;
+	position: absolute;
+	top: 30px;
+}
+.paitent-list-img {
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin: 0 auto;
+}
+.card.p-4.patient-list-card {
+	font-size: 13px;
+}
+.card.p-4.patient-list-card span {
+	display: block;
+}
+.modal-footer .common-button-two {
+	width: 130px;
+}

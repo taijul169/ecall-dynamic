@@ -1,0 +1,46 @@
+{{>header}}
+    </section>
+     <!-- bredcrump-wrapper -->
+   <section>
+    <div class="breadcrumb-top-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-12 col-xl-12">
+                   <div class="section-bradcrumb">
+                       <!-- left -->
+                       <div class="breadcrumb-left">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li>Doctor Profile</li>
+                        </ul>
+                        <h4>Profile Settings</h4>
+                       </div>
+                       
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+   </section>
+    <!-- doctor-booking-success -->
+    <section>
+       <div class="container">
+           <div class="row">
+               <div class="col-md-8 col-lg-8 col-xl-8 offset-md-2 offset-lg-2 offset-xl-2">
+                 <div class="success-message-wrapper text-center card p-5 my-5">
+                     <div class="check-icon">
+                         <i class="fa fa-check"></i>
+                     </div>
+                     <h4>Appointment booked Successfully!</h4>
+                     <span>Appointment booked with <b>Dr. {{appointmentData.doctor_name}}</b> <br>
+                        on <b>{{appointmentData.time}}</b></span>
+                     <a href="invoice-view?id={{appointmentData._id}}" class="submit-button">View Invoice</a>   
+                 </div>  
+               </div>
+           </div>
+       </div>
+    </section>
+
+   <!-- footer-section -->
+  {{>footer}}

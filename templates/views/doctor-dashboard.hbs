@@ -1,0 +1,496 @@
+  {{>header}}
+  {{#if message}}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>{{message}}</strong> 
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+   {{/if}}
+
+   <div class="log-succ-msg w-25 float-right mt-2">
+    {{#if logSuccMsg}}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>{{logSuccMsg}}  <b>{{userData.name}}</b></strong> 
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+    {{/if}}
+   </div>
+   {{!-- login success message display --}}
+    </section>
+    <!-- bredcrump-wrapper -->
+   <section>
+    <div class="breadcrumb-top-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-12 col-xl-12">
+                   <div class="section-bradcrumb">
+                       <!-- left -->
+                       <div class="breadcrumb-left">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li>Doctor Dashboard</li>
+                        </ul>
+                        <h4>Dashboard</h4>
+                        <h4 id="msg"></h4>
+                       </div>
+                       
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- doctor-dashboard-wrapper -->
+    <div class="doctor-dashboard-wrapper bg-light-orange ptb-50">
+        <div class="container">
+            <div class="row">
+                 
+                <!-- doctor-dash-left -->
+                <div class="col-md-3 col-lg-3 col-sm-3 col-sm-12 col-12">
+                  <div class="dash-left">
+                      <div class="doct-dash-profile text-center my-3">
+                          <div class="pro-img">
+                              <img class="img-fluid" src="assets/images/{{userData.photo}}" alt="thumbdoc.jpg">
+                          </div>
+                          <h6>Dr.{{userData.name}}</h6>
+                          <span class="text-wrap">{{userData.education.[0].degree}}</span>
+                      </div>
+                      <div class="doc-dash-page-link">
+                         {{>sidenav}}
+                      </div>
+                  </div>
+                </div>
+                <!-- doctor-dash-right -->
+                <div class="col-md-9 col-lg-9 col-sm-9 col-sm-12 col-12">
+                  <div class="dash-right mb-4">
+                      <div class="dash-right-top">
+                          <!-- statistics-circle -->
+                      <div class="stat-circle">
+                        <div class="row">
+                            <!-- single-cirle -->
+                            <div class="col-md-4 col-lg-4 col-sm-4 col-12 col-sm-12 border-right d-flex">
+                               <div class="single-circle red">
+                                  <img src="assets/images/dashboard/icon-01.png" alt="1.png">
+                               </div>  
+                               <div class="right-content-cirle">
+                                   <p>Tolal Patient</p>
+                                   <h4>{{appData.length}}</h4>
+                                   <small>Till Today</small>
+                               </div>  
+                            </div>
+                            <!-- single-cirle -->
+                            <div class="col-md-4 col-lg-4 col-sm-4 col-12 col-sm-12 border-right d-flex">
+                                <div class="single-circle green">
+                                   <img src="assets/images/dashboard/icon-01.png" alt="1.png">
+                                </div>  
+                                <div class="right-content-cirle">
+                                    <p>Tolal Patient</p>
+                                    <h4>150</h4>
+                                    <small>Till Today</small>
+                                </div>  
+                             </div>
+                             <!-- single-cirle -->
+                            <div class="col-md-4 col-lg-4 col-sm-4 col-12 col-sm-12 border-right d-flex">
+                                <div class="single-circle blue">
+                                   <img src="assets/images/dashboard/icon-01.png" alt="1.png">
+                                </div>  
+                                <div class="right-content-cirle">
+                                    <p>Tolal Patient</p>
+                                    <h4>150</h4>
+                                    <small>Till Today</small>
+                                </div>  
+                             </div>
+                        </div>
+                      </div>
+                      </div>
+                  </div>
+                  <!-- dashboard-patient-appointment-wrapper -->
+                  <div class="dashboard-patient-appointment-wrapper">
+                    <h5>Paitent Appointment</h5>
+                    <div class="card">
+                       <div class="card-header">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                              <a class="nav-link active"  data-toggle="tab" href="#upcoming" role="tab" >Upcoming</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" data-toggle="tab" href="#today" role="tab">Today</a>
+                            </li>
+                           
+                          </ul>
+                       </div>
+                         <!-- table-data-wrapper -->
+                        <div class="card-body">
+                            <div class="tab-content" id="myTabContent">
+                                  <div class="table-responsive tab-pane fade show active" id="upcoming">
+                                    <table class="table">
+                                       <tr>
+                                           <th>Patient Name</th>
+                                           <th>Appt Date</th>
+                                           <th>Purpose</th>
+                                           <th>Type</th>
+                                           <th>Paid Amount</th>
+                                           <th>Action</th>
+                                       </tr>
+                                       {{#each appData}}
+                                       <!-- table-data-start -->
+                                       <!-- single-row -->
+                                       <tr>
+                                           <td>
+                                               <div class="p-img">
+                                                   <img class="img-fluid" src="assets/images/dashboard//patient/avatar.png" alt="patient.jpg">
+                                               </div>
+                                               <div class="p-info">
+                                                  <h6>{{this.firstname}}</h6>
+                                                  <small>#16565</small>
+                                               </div>
+                                           </td>
+                                           <td>
+                                             {{this.date}}
+                                             <span>{{this.time}}</span>
+                                           </td>
+                                           <td>
+                                               General
+                                           </td>
+                                           <td>New Patient</td>
+                                           <td>Tk.600</td>
+                                           <td>
+                                               <ul class="d-flex action">
+                                                   <li><a href="#" class="light-blue"><i class="fa fa-eye"></i>View</a></li>
+                                                   <li><a href="emailsend?doc_id={{this.doctor_id}}&id={{this._id}}" class="light-green"><i class="fa fa-check"></i>Accept</a></li>
+                                                   <li><a href="#" class="light-red"><i class="fa fa-close"></i>Cancel</a></li>
+                                               </ul>
+                                           </td>
+                                       </tr>
+                                       {{/each}}
+                                       
+                                    </table>
+                                  </div>
+                                  <div class="table-responsive tab-pane fade" id="today">
+                                    <table class="table">
+                                       <tr>
+                                           <th>Patient Name</th>
+                                           <th>Appt Date</th>
+                                           <th>Purpose</th>
+                                           <th>Type</th>
+                                           <th>Paid Amount</th>
+                                           <th>Action</th>
+                                       </tr>
+    
+                                       <!-- table-data-start -->
+                                       <!-- single-row -->
+                                       <tr>
+                                           <td>
+                                               <div class="p-img">
+                                                   <img class="img-fluid" src="assets/images/dashboard/patient/patient.jpg" alt="patient.jpg">
+                                               </div>
+                                               <div class="p-info">
+                                                  <h6>Shimul Hassan</h6>
+                                                  <small>#16565</small>
+                                               </div>
+                                           </td>
+                                           <td>
+                                             16January 2021
+                                             <span>11.00 AM</span>
+                                           </td>
+                                           <td>
+                                               General
+                                           </td>
+                                           <td>New Patient</td>
+                                           <td>Tk.600</td>
+                                           <td>
+                                               <ul class="d-flex action">
+                                                   <li><a href="#" class="light-blue"><i class="fa fa-eye"></i>View</a></li>
+                                                   <li><a href="#" class="light-green"><i class="fa fa-check"></i>Accept</a></li>
+                                                   <li><a href="#" class="light-red"><i class="fa fa-close"></i>Cancel</a></li>
+                                               </ul>
+                                           </td>
+                                       </tr>
+                                        <!-- single-row -->
+                                        <tr>
+                                            <td>
+                                                <div class="p-img">
+                                                    <img class="img-fluid" src="assets/images/dashboard/patient/patient1.jpg" alt="patient.jpg">
+                                                </div>
+                                                <div class="p-info">
+                                                   <h6>Saifuzzaman</h6>
+                                                   <small>#16565</small>
+                                                </div>
+                                            </td>
+                                            <td>
+                                              16January 2021
+                                              <span>11.00 AM</span>
+                                            </td>
+                                            <td>
+                                                General
+                                            </td>
+                                            <td>New Patient</td>
+                                            <td>Tk.600</td>
+                                            <td>
+                                                <ul class="d-flex action">
+                                                    <li><a href="#" class="light-blue"><i class="fa fa-eye"></i>View</a></li>
+                                                    <li><a href="#" class="light-green"><i class="fa fa-check"></i>Accept</a></li>
+                                                    <li><a href="#" class="light-red"><i class="fa fa-close"></i>Cancel</a></li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <!-- single-row -->
+                                       <tr>
+                                        <td>
+                                            <div class="p-img">
+                                                <img class="img-fluid" src="assets/images/dashboard/patient/patient2.jpg" alt="patient.jpg">
+                                            </div>
+                                            <div class="p-info">
+                                               <h6>Shimul Hassan</h6>
+                                               <small>#16565</small>
+                                            </div>
+                                        </td>
+                                        <td>
+                                          16January 2021
+                                          <span>11.00 AM</span>
+                                        </td>
+                                        <td>
+                                            General
+                                        </td>
+                                        <td>New Patient</td>
+                                        <td>Tk.600</td>
+                                        <td>
+                                            <ul class="d-flex action">
+                                                <li><a href="#" class="light-blue"><i class="fa fa-eye"></i>View</a></li>
+                                                <li><a href="emailsend" class="light-green"><i class="fa fa-check"></i>Accept</a></li>
+                                                <li><a href="#" class="light-red"><i class="fa fa-close"></i>Cancel</a></li>
+                                            </ul>
+                                        </td>
+                                       </tr>
+                                        <!-- single-row -->
+                                        <tr>
+                                            <td>
+                                                <div class="p-img">
+                                                    <img class="img-fluid" src="assets/images/dashboard/patient/patient3.jpg" alt="patient.jpg">
+                                                </div>
+                                                <div class="p-info">
+                                                   <h6>Shimul Hassan</h6>
+                                                   <small>#16565</small>
+                                                </div>
+                                            </td>
+                                            <td>
+                                              16January 2021
+                                              <span>11.00 AM</span>
+                                            </td>
+                                            <td>
+                                                General
+                                            </td>
+                                            <td>New Patient</td>
+                                            <td>Tk.600</td>
+                                            <td>
+                                                <ul class="d-flex action">
+                                                    <li><a href="#" class="light-blue"><i class="fa fa-eye"></i>View</a></li>
+                                                    <li><a href="#" class="light-green"><i class="fa fa-check"></i>Accept</a></li>
+                                                    <li><a href="#" class="light-red"><i class="fa fa-close"></i>Cancel</a></li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                                <!-- single-row -->
+                                         <tr>
+                                        <td>
+                                            <div class="p-img">
+                                                <img class="img-fluid" src="assets/images/dashboard/patient/patient4.jpg" alt="patient.jpg">
+                                            </div>
+                                            <div class="p-info">
+                                               <h6>Shimul Hassan</h6>
+                                               <small>#16565</small>
+                                            </div>
+                                        </td>
+                                        <td>
+                                          16January 2021
+                                          <span>11.00 AM</span>
+                                        </td>
+                                        <td>
+                                            General
+                                        </td>
+                                        <td>New Patient</td>
+                                        <td>Tk.600</td>
+                                        <td>
+                                            <ul class="d-flex action">
+                                                <li><a href="#" class="light-blue"><i class="fa fa-eye"></i>View</a></li>
+                                                <li><a href="#" class="light-green"><i class="fa fa-check"></i>Accept</a></li>
+                                                <li><a href="#" class="light-red"><i class="fa fa-close"></i>Cancel</a></li>
+                                            </ul>
+                                        </td>
+                                         </tr>
+                                       
+                                    </table>
+                                  </div>
+                                <!-- <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
+                                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+                                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div> -->
+                              </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+   </section>
+      <!-- log-out-modal -->
+        <section>
+        <!-- Modal -->
+        <div class="modal fade" id="logout-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-footer">
+                  <a href="logout" class="common-button-two">Confirm Logout</a>
+                  <a href="doctor-dashboard" class="common-button-two">Back</a>
+                </div>
+            </div>
+            </div>
+        </div>
+     </section>
+   <!-- footer-section -->
+   <footer>
+      <div class="footer-section ptb-50">
+          <div class="container">
+              <div class="row">
+                  <!-- single-footer-widget -->
+                  <div class="col-md-5 col-lg-5 col-xl-5 col-12 col-sm-12">
+                      <div class="single-widget">
+                        <div class="logo">
+                            <img src="assets/images/logo/logo.png" alt="logo.png">
+                        </div>
+                        <p>Get in touch with smart technology and get your Expected service from Technolt</p>
+                        <div class="social-link">
+                            <ul>
+                                <li><a href="https://www.facebook.com/polockgrp/"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                      </div>
+                  </div>
+                    <!-- single-footer-widget -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 col-12 col-sm-12">
+                    <div class="single-widget">
+                       <h5>Our Concern</h5>
+                        <div class="quick-link-footer">
+                            <ul>
+                                <li><a href="http://www.ngitbd.com/">NGIT</a></li>
+                                <li><a href="http://1touchbd.com/">1touch</a></li>
+                                <li><a href="https://www.facebook.com/PolockInteriorDesign">Polock Interior</a></li>
+                                <li><a href="dryexpre.com.bd">Dry Express</a></li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                        <!-- single-footer-widget -->
+                  <div class="col-md-2 col-lg-2 col-xl-2 col-12 col-sm-12">
+                    <div class="single-widget">
+                        <h5>Services</h5>
+                        <div class="quick-link-footer">
+                            <ul>
+                                <li><a href="#">Interior</a></li>
+                                <li><a href="#">Bank Management System</a></li>
+                                <li><a href="#">Home & Commercial Automation </a></li>
+                                <li><a href="#">Dry Express</a></li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- single-footer-widget -->
+                <div class="col-md-3 col-lg-3 col-xl-3 col-12 col-sm-12">
+                    <div class="single-widget">
+                        <h5>Our Address</h5>
+                         <div class="single-box">
+                            <div class="footer-icon">
+                                <i class="flaticon-house"></i>
+                            </div>  
+                             <div class="add-info">
+                                3, 2, B, King of Dubai Commercial - (Bur Dubai Mankhool )
+                             </div>
+                         </div>
+                         <div class="single-box">
+                            <div class="footer-icon">
+                                <i class="flaticon-mail"></i>
+                            </div>  
+                             <div class="add-info">
+                                info@polockgroup.com
+                             </div>
+                         </div>
+                         <div class="single-box">
+                            <div class="footer-icon">
+                                <i class="flaticon-call"></i>
+                            </div>  
+                             <div class="add-info">
+                                +971 54 746 2503
+                             </div>
+                         </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-12 col-xl-12 copyright-bottom">
+                   <div class="row">
+                       <div class="col-md-7 col-xl-7 col-lg-7 col-12 col-sm-12">
+                           <p class="text-center">Copyright ©2020 All rights reserved | technolt is made by  <a href="#">1-touch</a></p>
+                       </div>
+                       <div class="col-md-5 col-xl-5 col-lg-5 col-12 col-sm-12">
+                         <ul class="footer-link-bottom">
+                             <li><a href="#">Terms of Service</a></li>
+                             <li><a href="#">Privacy Policy</a></li>
+                             <li><a href="#">Support</a></li>
+                         </ul>
+                      </div>
+                   </div>
+                </div>
+              </div>
+          </div>
+      </div>
+    </footer>
+     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="assets/plugin/js/jquery.counterup.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script> -->
+    <!-- <script src="assets/plugin/js/jquery.nivo.slider.js"></script> -->
+    <script src="assets/plugin/js/owl.carousel.min.js"></script>
+    <!-- <script src="assets/plugin/js/simple-lightbox.min.js"></script> -->
+   
+    <script src="assets/plugin/js/jQuery.rProgressbar.js"></script>
+    <script src="assets/plugin/js/one-page-scroll.js"></script>
+    <script src="https://cdn.socket.io/socket.io-3.0.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.js"></script>
+    <script>
+           var socket = io("http://localhost:5000");
+          socket.on('connection');
+
+          socket.on("message", (data)=>{
+            const msg = document.getElementById('msg');
+              msg.innerText= data;
+        })
+    </script>
+    {{!-- js-pdf --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="assets/plugin/js/sticky.js"></script>
+    <script src="assets/js/active.js"></script> 
+    <script src="assets/js/formValidate.js"></script>
+    <!-- <script src="home.js"></script> -->
+
+</body>
+
+</html>

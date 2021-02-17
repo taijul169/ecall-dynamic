@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+        <!-- Castro fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+     <!-- owl-carousel -->
+    <link rel="stylesheet" href="assets/plugin/css/owl.carousel.min.css"/>
+    <link rel="stylesheet" href="assets/plugin/css/owl.theme.default.min.css" />
+    <!-- animate-css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+     <!-- font-awesome    -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+     <!-- lightbox-gallery -->
+     <link rel="stylesheet" href="assets/plugin/css/simple-lightbox.min.css">
+     <!-- flat-icon -->
+     <link rel="stylesheet" href="assets/font/flaticon.css">
+    <!-- progressbar -->
+    <link rel="stylesheet" href="assets/plugin/css/jquery.rprogessbar.min.css">
+    <!-- aos.css -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+     <!-- main-style    -->
+    <link rel="stylesheet" href="theme-style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <title>Ecall</title>
+</head>
+<body>
+    <!-- pre-loader -->
+     <!-- <div class="preloader">
+     </div> -->
+     <!-- top-indicator -->
+    <a href="#" class="scroll-top-indicator"><i class="fa fa-angle-up"></i></a>
+    <!-- sidebar toggler -->
+    <!-- <div class="sidebar-controler">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div> -->
+   {{>header}}
+    </section>
+    <!-- search-result-wrapper -->
+   <section>
+    <div class="breadcrumb-top-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-12 col-xl-12">
+                   <div class="section-bradcrumb">
+                       <!-- left -->
+                       <div class="breadcrumb-left">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li>Sign Up</li>
+                        </ul>
+                        <h4><span>Doctor Sign Up</span></h4>
+                       </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="login-section-wrapper ptb-50">
+        <div class="container">
+            <div class="row">
+                <!-- login-left -->
+                <div class="col-md-6 col-lg-6 col-xl-6 col-12.col-sm-12">
+                    <div class="login-left">
+                        <img src="assets/images/bg/login-banner.png" alt="banner.png">
+                    </div>
+                   
+                </div>
+                <!-- login-right -->
+                <div class="col-md-5 col-lg-5 col-xl-5 col-12.col-sm-12">
+                    <div class="login-right-box">
+                      <div class="card">
+                          <div class="card-body">
+                            <form action="/doctor-signup" method="POST">
+                                <h5> Doctor SignUp <a href="patient-login" class="float-right">Not a Doctor?</a></h5>
+                               
+                                <!-- Name-field -->
+                                <div class="form-group">
+                                    <input type="text" name="name" id="register_name">
+                                    <label for="Name">Name</label>
+                                </div>
+                                <!-- Mobile No-field -->
+                                <div class="form-group">
+                                    <input type="text"  name="phone" id="register_phone">
+                                    <label for="phone">Phone</label>
+                                </div>
+                                <!-- create-password -->
+                                <div class="form-group">
+                                    <input type="password"  name="password" id="register_password">
+                                    <label for="password">Password</label>
+                                </div>
+                                <!-- confirm-password -->
+                                <div class="form-group">
+                                    <input type="password"  name="confirmpassword" id="register_cpassword">
+                                    <label for="password">Password</label>
+                                </div>
+                                 <!-- Submit- -->
+                                <div class="form-group">
+                                    <input type="submit" class="submit-button" value="Sign Up" id="l_login">
+                                </div>
+                                 </form>
+                                <!-- or-devider -->
+                                <div class="form-group">
+                                    <span class="divider">Or</span>
+                                </div>
+                                <!-- social-media-login-option -->
+                                <div class="social-login-option">
+                                    <a href="#" class="btn btn-primary"><i class="fa fa-facebook mr-1"></i>Login</a>
+                                    <a href="#" class="btn btn-danger"><i class="fa fa-google mr-1"></i>Login</a>
+                                </div>
+                                <!-- social-media-login-option -->
+                                <div class="form-group text-center">
+                                    <p>Already have an account?<a href="login">Login</a></p>
+                                </div>
+                           
+                          </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   </section>
+   <!-- footer-section -->
+  {{>footer}}
