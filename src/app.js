@@ -164,23 +164,45 @@ app.post("/doctor-profile-settings", upload.single('photo'), async(req, res)=>{
            }
     //   console.log(fileInfo);
             var myquery = { _id:id};
+        if(req.file){
             var newValues = { $set:{
-            name:req.body.name,
-            username:req.body.username,    
-            // photo:fileInfo,
-            photo:fileName(),
-            lastname:req.body.lastname,
-            email:req.body.email,
-            gender:req.body.gender,
-            dateofbirth:req.body.dateofbirth,
-            about:req.body.about,
-            specialties:req.body.specialties,
-            clinicinfo:[{clinicname:req.body.clinicname, clinicaddress:req.body.clinicaddress,}],
-            education:[{degree:req.body.degree, college:req.body.college,passingyear:req.body.passingyear}],
-            experience:[{hosname:req.body.hosname, fromdate:req.body.fromdate,todate:req.body.todate}],
-            registration:[{reginumber:req.body.reginumber, passyear:req.body.passyear}],
-            city:req.body.city
+                name:req.body.name,
+                username:req.body.username,    
+                // photo:fileInfo,
+                photo:fileName(),
+                lastname:req.body.lastname,
+                email:req.body.email,
+                gender:req.body.gender,
+                dateofbirth:req.body.dateofbirth,
+                about:req.body.about,
+                specialties:req.body.specialties,
+                clinicinfo:[{clinicname:req.body.clinicname, clinicaddress:req.body.clinicaddress,}],
+                education:[{degree:req.body.degree, college:req.body.college,passingyear:req.body.passingyear}],
+                experience:[{hosname:req.body.hosname, fromdate:req.body.fromdate,todate:req.body.todate}],
+                registration:[{reginumber:req.body.reginumber, passyear:req.body.passyear}],
+                city:req.body.city
+                }
             }
+        }
+        else{
+            var newValues = { $set:{
+                name:req.body.name,
+                username:req.body.username,    
+                // photo:fileInfo,
+                lastname:req.body.lastname,
+                email:req.body.email,
+                gender:req.body.gender,
+                dateofbirth:req.body.dateofbirth,
+                about:req.body.about,
+                specialties:req.body.specialties,
+                clinicinfo:[{clinicname:req.body.clinicname, clinicaddress:req.body.clinicaddress,}],
+                education:[{degree:req.body.degree, college:req.body.college,passingyear:req.body.passingyear}],
+                experience:[{hosname:req.body.hosname, fromdate:req.body.fromdate,todate:req.body.todate}],
+                registration:[{reginumber:req.body.reginumber, passyear:req.body.passyear}],
+                city:req.body.city
+                }
+            }
+
         }
         const updateResult =  await Docregistration.findByIdAndUpdate(myquery,newValues,{
             useFindAndModify:false
