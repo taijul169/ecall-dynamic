@@ -281,8 +281,6 @@ app.post("/doctor-dashboard", async(req, res)=>{
         const isMatch = await bycript.compare(password, userData.password);
         // call  a function for generating a jsonwebtoken  ----------------
         const token = await userData.generateAuthToken();
-        // console.log(token); 
-        console.log("i am inside try block!!")
         // setting cookie in the browser--------------------
         res.cookie("jwt",token, {
             // expires:new Date(Date.now() + 100000000),
@@ -392,8 +390,16 @@ app.post("/booking-doctor/", async(req, res)=>{
     }
 })
 // patientlist--routing
-app.get("/patient-list", (req, res)=>{
-    res.render("patient-list")
+app.get("/patient-list", async(req, res)=>{
+
+    userId = req.query.id;
+    console.log("the user id is:"+userId)
+    let userData = await Docregistration.findById(userId);
+    //    fecthing data from doctorappointment collection
+    const appData = await Doctorappointment.find({doctor_id:userId});
+    //  userData = JSON.stringify(userData)
+    console.log(userData.photo);
+   res.render('patient-list', {userData,appData})
 })
 // view-invoice-routing
 app.get("/invoice-view", async(req, res)=>{

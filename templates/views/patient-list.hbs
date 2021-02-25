@@ -13,7 +13,7 @@
                             <li><a href="/">Home</a></li>
                             <li>Doctor Profile</li>
                         </ul>
-                        <h4>Profile Settings</h4>
+                        <h4>My Patient List</h4>
                        </div>
                        
                    </div>
@@ -30,30 +30,20 @@
                   <div class="dash-left">
                       <div class="doct-dash-profile text-center my-3">
                           <div class="pro-img">
-                              <img class="img-fluid" src="assets/images/dashboard/doctor-thumb-02.jpg" alt="thumbdoc.jpg">
+                              <img class="img-fluid" src="assets/images/uploads/{{userData.photo}}" alt="thumbdoc.jpg">
                           </div>
-                          <h6>Dr.Kutubuddin</h6>
-                          <span>BDS, MDS - Oral & Maxillofacial Surgery</span>
+                          <h6>Dr.{{userData.name}}</h6>
+                          <span>{{userData.education.[0].degree}}</span>
                       </div>
                       <div class="doc-dash-page-link">
-                        <nav>
-                            <ul>
-                                <li class="nav-item"><a href="doctor-dashboard.html" class="nav-link active"><i class="fa fa-columns mr-2"></i>Dashboard</a></li>
-                                <li class="nav-item"><a href="appointment.html" class="nav-link"><i class="fa fa-calendar-check mr-2"></i>Appointment</a></li>
-                                <li class="nav-item"><a href="patient-list.html" class="nav-link"><i class="fa fa-wheelchair mr-2"></i>My Patients</a></li>
-                                <li class="nav-item"><a href="doctor-profile-settings.html" class="nav-link"><i class="fa fa-user-md mr-2"></i>Profile Settings</a></li>
-                                <li class="nav-item"><a href="doctor-schedule.html" class="nav-link"><i class="fa fa-clock mr-2"></i>Schedule Timing</a></li>
-                                <li class="nav-item"><a href="doctor-message.html" class="nav-link"><i class="fa fa-comments mr-2"></i>Messages</a></li>
-                                <li class="nav-item"><a href="doc-change-password.html" class="nav-link"><i class="fa fa-lock mr-2"></i>Change Password</a></li>
-                                <li class="nav-item"><a href="logout.html" data-toggle="modal" data-target="#logout-modal" class="nav-link"><i class="fa fa-sign-out-alt mr-2"></i>Logout</a></li>
-                            </ul>
-                        </nav>
+                        {{>sidenav}}
                       </div>
                   </div>
                 </div>
                 <!-- patient list wrapper- -->
                 <div class="col-md-9 col-lg-9 col-sm-9 col-sm-12 col-12">
                   <div class="row">
+                       {{#each appData}}
                       <!-- single-patient -->
                       <div class="col-md-4 col-lg-4 col-xl-4 col-sm-12 col-12">
                         <div class="card p-4 patient-list-card mb-4">
@@ -61,119 +51,21 @@
                                 <div class="paitent-list-img">
                                     <img src="assets/images/dashboard/patient/patient.jpg" alt="1.png">
                                 </div>
-                                <h6>Shimul Hassan</h6>
+                                <h6>{{this.firstname}}</h6>
                                 <span><b>Patient Id:</b>#0215</span>
-                                <span><b><i class="fa fa-map-marker-alt mr-2"></i></b>Banani , dhaka</span>
+                                <span><b><i class="fa fa-map-marker-alt mr-2"></i></b>{{this.address}}</span>
                             </div>
                                
                        
                             <ul class="my-3">
-                                <li class="d-flex justify-content-between"><b>Phone</b><span>+1 952 001 8563</span></li>
-                                <li class="d-flex justify-content-between"><b>Age</b><span>26</span></li>
+                                <li class="d-flex justify-content-between"><b>Phone</b><span>{{this.phone}}</span></li>
+                                <li class="d-flex justify-content-between"><b>Age</b><span>{{this.age}}</span></li>
                                 <li class="d-flex justify-content-between"><b>Blood Group</b><span>o+</span></li>
                             </ul>
                            </div> 
-                      </div>   
-                        <!-- single-patient -->
-                      <div class="col-md-4 col-lg-4 col-xl-4 col-sm-12 col-12">
-                        <div class="card p-4 patient-list-card mb-4">
-                            <div class="card-up text-center border-bottom pb-3">
-                                <div class="paitent-list-img">
-                                    <img src="assets/images/dashboard/patient/patient.jpg" alt="1.png">
-                                </div>
-                                <h6>Shimul Hassan</h6>
-                                <span><b>Patient Id:</b>#0215</span>
-                                <span><b><i class="fa fa-map-marker-alt mr-2"></i></b>Banani , dhaka</span>
-                            </div>
-                               
-                       
-                            <ul class="my-3">
-                                <li class="d-flex justify-content-between"><b>Phone</b><span>+1 952 001 8563</span></li>
-                                <li class="d-flex justify-content-between"><b>Age</b><span>26</span></li>
-                                <li class="d-flex justify-content-between"><b>Blood Group</b><span>o+</span></li>
-                            </ul>
-                           </div> 
-                      </div> 
-                     <!-- single-patient -->
-                    <div class="col-md-4 col-lg-4 col-xl-4 col-sm-12 col-12">
-                            <div class="card p-4 patient-list-card mb-4">
-                                <div class="card-up text-center border-bottom pb-3">
-                                    <div class="paitent-list-img">
-                                        <img src="assets/images/dashboard/patient/patient.jpg" alt="1.png">
-                                    </div>
-                                    <h6>Shimul Hassan</h6>
-                                    <span><b>Patient Id:</b>#0215</span>
-                                    <span><b><i class="fa fa-map-marker-alt mr-2"></i></b>Banani , dhaka</span>
-                                </div>
-                                
-                        
-                                <ul class="my-3">
-                                    <li class="d-flex justify-content-between"><b>Phone</b><span>+1 952 001 8563</span></li>
-                                    <li class="d-flex justify-content-between"><b>Age</b><span>26</span></li>
-                                    <li class="d-flex justify-content-between"><b>Blood Group</b><span>o+</span></li>
-                                </ul>
-                            </div> 
-                    </div> 
-                       <!-- single-patient -->
-                       <div class="col-md-4 col-lg-4 col-xl-4 col-sm-12 col-12">
-                        <div class="card p-4 patient-list-card mb-4">
-                            <div class="card-up text-center border-bottom pb-3">
-                                <div class="paitent-list-img">
-                                    <img src="assets/images/dashboard/patient/patient.jpg" alt="1.png">
-                                </div>
-                                <h6>Shimul Hassan</h6>
-                                <span><b>Patient Id:</b>#0215</span>
-                                <span><b><i class="fa fa-map-marker-alt mr-2"></i></b>Banani , dhaka</span>
-                            </div>
-                               
-                       
-                            <ul class="my-3">
-                                <li class="d-flex justify-content-between"><b>Phone</b><span>+1 952 001 8563</span></li>
-                                <li class="d-flex justify-content-between"><b>Age</b><span>26</span></li>
-                                <li class="d-flex justify-content-between"><b>Blood Group</b><span>o+</span></li>
-                            </ul>
-                           </div> 
-                      </div>   
-                        <!-- single-patient -->
-                      <div class="col-md-4 col-lg-4 col-xl-4 col-sm-12 col-12">
-                        <div class="card p-4 patient-list-card mb-4">
-                            <div class="card-up text-center border-bottom pb-3">
-                                <div class="paitent-list-img">
-                                    <img src="assets/images/dashboard/patient/patient.jpg" alt="1.png">
-                                </div>
-                                <h6>Shimul Hassan</h6>
-                                <span><b>Patient Id:</b>#0215</span>
-                                <span><b><i class="fa fa-map-marker-alt mr-2"></i></b>Banani , dhaka</span>
-                            </div>
-                               
-                       
-                            <ul class="my-3">
-                                <li class="d-flex justify-content-between"><b>Phone</b><span>+1 952 001 8563</span></li>
-                                <li class="d-flex justify-content-between"><b>Age</b><span>26</span></li>
-                                <li class="d-flex justify-content-between"><b>Blood Group</b><span>o+</span></li>
-                            </ul>
-                           </div> 
-                      </div> 
-                     <!-- single-patient -->
-                    <div class="col-md-4 col-lg-4 col-xl-4 col-sm-12 col-12">
-                            <div class="card p-4 patient-list-card mb-4">
-                                <div class="card-up text-center border-bottom pb-3">
-                                    <div class="paitent-list-img">
-                                        <img src="assets/images/dashboard/patient/patient.jpg" alt="1.png">
-                                    </div>
-                                    <h6>Shimul Hassan</h6>
-                                    <span><b>Patient Id:</b>#0215</span>
-                                    <span><b><i class="fa fa-map-marker-alt mr-2"></i></b>Banani , dhaka</span>
-                                </div>
-                                
-                        
-                                <ul class="my-3">
-                                    <li class="d-flex justify-content-between"><b>Phone</b><span>+1 952 001 8563</span></li>
-                                    <li class="d-flex justify-content-between"><b>Age</b><span>26</span></li>
-                                    <li class="d-flex justify-content-between"><b>Blood Group</b><span>o+</span></li>
-                                </ul>
-                            </div> 
-                    </div> 
+                      </div>
+                    
+                    {{/each}}   
                   </div>
                   </div>
                 </div>

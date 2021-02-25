@@ -44,19 +44,7 @@
                           <span>{{userData.education.[0].degree}}</span>
                       </div>
                       <div class="doc-dash-page-link">
-                        {{!-- sidenav --}}
-                           <nav>
-                                <ul>
-                                    <li class="nav-item"><a href="doctor-dashboard" class="nav-link active"><i class="fa fa-columns mr-2"></i>Dashboard</a></li>
-                                    <li class="nav-item"><a href="appointment" class="nav-link"><i class="fa fa-calendar-check mr-2"></i>Appointment</a></li>
-                                    <li class="nav-item"><a href="patient-list" class="nav-link"><i class="fa fa-wheelchair mr-2"></i>My Patients</a></li>
-                                    <li class="nav-item"><a href="doctor-profile-settings?id={{ userData._id }}" class="nav-link"><i class="fa fa-user-md mr-2"></i>Profile Settings</a></li>
-                                    <li class="nav-item"><a href="doctor-schedule" class="nav-link"><i class="fa fa-clock mr-2"></i>Schedule Timing</a></li>
-                                    <li class="nav-item"><a href="doctor-message" class="nav-link"><i class="fa fa-comments mr-2"></i>Messages</a></li>
-                                    <li class="nav-item"><a href="doc-change-password" class="nav-link"><i class="fa fa-lock mr-2"></i>Change Password</a></li>
-                                    <li class="nav-item"><a href="#" data-toggle="modal" data-target="#logout-modal" class="nav-link"><i class="fa fa-sign-out-alt mr-2"></i>Logout</a></li>
-                                </ul>
-                            </nav>
+                         {{>sidenav}}
                       </div>
                   </div>
                 </div>
